@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>t-kaper // signal log</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on t-kaper // signal log</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 18 May 2026 20:00:00 +0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First signal</title>
+      <link>http://localhost:1313/posts/first-signal/</link>
+      <pubDate>Mon, 18 May 2026 20:00:00 +0500</pubDate>
+      <guid>http://localhost:1313/posts/first-signal/</guid>
+      <description>Launching the first version of the site : a personal node for posts, notes and projects .</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;h1 id=&#34;about&#34;&gt;About&lt;/h1&gt;&#xA;&lt;p&gt;This is the blog of the &lt;code&gt;t-kaper&lt;/code&gt; channel.&lt;/p&gt;&#xA;&lt;p&gt;Here I publish:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;source code and notes for projects&lt;/li&gt;&#xA;&lt;li&gt;hardware, robots, and small engineering experiments&lt;/li&gt;&#xA;&lt;li&gt;project descriptions, drafts, and workshop logs&lt;/li&gt;&#xA;&lt;li&gt;a few thoughts and a workshop-like digital garden&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;The style is meant to feel like a calm journal with a soft console and cyberpunk tone, not a sterile product blog.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" role="img" aria-label="first signal cover">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#091017"/>
+      <stop offset="1" stop-color="#0a0f14"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="0%" r="70%">
+      <stop offset="0" stop-color="#57e3ff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#57e3ff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#1f2a36" stroke-width="1"/>
+    </pattern>
+    <pattern id="dots" width="80" height="80" patternUnits="userSpaceOnUse">
+      <circle cx="40" cy="40" r="1.2" fill="#57e3ff" opacity="0.45"/>
+    </pattern>
+    <filter id="blur"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+
+  <rect width="1600" height="700" fill="url(#bg)"/>
+  <rect width="1600" height="700" fill="url(#grid)" opacity="0.45"/>
+  <rect width="1600" height="700" fill="url(#dots)"/>
+  <rect width="1600" height="700" fill="url(#glow)"/>
+
+  <g transform="translate(120 130)" font-family="JetBrains Mono, ui-monospace, monospace">
+    <text x="0" y="0" fill="#57e3ff" font-size="22" letter-spacing="8">// SIGNAL_001</text>
+    <text x="0" y="120" fill="#f3f7fb" font-size="120" font-weight="700" letter-spacing="-2">first signal</text>
+    <text x="0" y="200" fill="#7f92a6" font-size="28">hugo · cyber console · workshop log</text>
+  </g>
+
+  <g transform="translate(120 480)" stroke="#57e3ff" stroke-width="2" fill="none" opacity="0.55">
+    <path d="M0 60 L60 60 L80 20 L120 100 L160 40 L210 80 L260 60 L1360 60"/>
+    <circle cx="80" cy="20" r="4" fill="#57e3ff"/>
+    <circle cx="120" cy="100" r="4" fill="#9b7bff"/>
+    <circle cx="210" cy="80" r="4" fill="#89ffb0"/>
+  </g>
+
+  <g transform="translate(1200 130)" opacity="0.6">
+    <rect x="0" y="0" width="280" height="170" fill="none" stroke="#1f2a36"/>
+    <text x="14" y="30" fill="#57e3ff" font-family="JetBrains Mono, monospace" font-size="14">[ panel.status ]</text>
+    <text x="14" y="60" fill="#7f92a6" font-family="JetBrains Mono, monospace" font-size="14">node: tk-01</text>
+    <text x="14" y="84" fill="#7f92a6" font-family="JetBrains Mono, monospace" font-size="14">uplink: ok</text>
+    <text x="14" y="108" fill="#7f92a6" font-family="JetBrains Mono, monospace" font-size="14">load: 0.42</text>
+    <text x="14" y="132" fill="#89ffb0" font-family="JetBrains Mono, monospace" font-size="14">> ready</text>
+    <rect x="14" y="146" width="252" height="6" fill="#1f2a36"/>
+    <rect x="14" y="146" width="180" height="6" fill="#57e3ff"/>
+  </g>
+</svg>
