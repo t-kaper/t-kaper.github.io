@@ -1,26 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>t-kaper // signal log</title>
-    <link>http://localhost:1313/ru/</link>
-    <description>Recent content on t-kaper // signal log</description>
-    <generator>Hugo</generator>
-    <language>ru-RU</language>
-    <lastBuildDate>Mon, 18 May 2026 20:00:00 +0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/ru/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Первый сигнал</title>
-      <link>http://localhost:1313/ru/posts/first-signal/</link>
-      <pubDate>Mon, 18 May 2026 20:00:00 +0500</pubDate>
-      <guid>http://localhost:1313/ru/posts/first-signal/</guid>
-      <description>Запуск первой версии сайта : личный узел для постов, заметок и проектов.</description>
-    </item>
-    <item>
-      <title>О сайте</title>
-      <link>http://localhost:1313/ru/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ru/about/</guid>
-      <description>&lt;p&gt;Это блог канала &lt;code&gt;t-kaper&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Тут будут:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;исходники проектов и заметки по коду&lt;/li&gt;&#xA;&lt;li&gt;железо, роботы и мелкая инженерия&lt;/li&gt;&#xA;&lt;li&gt;описания проектов, черновики и логи сборок&lt;/li&gt;&#xA;&lt;li&gt;немного мыслей, личная техно-мастерская и digital garden&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;По стилю это не стерильный продуктовый блог, а спокойный журнал с консольным и слегка киберпанковым настроением.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>t-kaper</title><link>https://t-kaper.github.io/ru/</link><description>Recent content on t-kaper</description><generator>Hugo</generator><language>ru-RU</language><lastBuildDate>Sat, 23 May 2026 23:21:00 +0500</lastBuildDate><atom:link href="https://t-kaper.github.io/ru/index.xml" rel="self" type="application/rss+xml"/><item><title>Ультрафиолетовая лампа для обеззараживания</title><link>https://t-kaper.github.io/ru/posts/uv-disinfection-lamp/</link><pubDate>Sat, 23 May 2026 23:21:00 +0500</pubDate><guid>https://t-kaper.github.io/ru/posts/uv-disinfection-lamp/</guid><description>Небольшой проект: ультрафиолетовая лампа E27, ESP32-C3, OLED-экран и счетчик ресурса лампы для обеззараживания.</description></item><item><title>Первый сигнал</title><link>https://t-kaper.github.io/ru/posts/first-signal/</link><pubDate>Mon, 18 May 2026 20:00:00 +0500</pubDate><guid>https://t-kaper.github.io/ru/posts/first-signal/</guid><description>Запуск первой версии сайта : личный узел для постов, заметок и проектов.</description></item><item><title>О сайте</title><link>https://t-kaper.github.io/ru/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://t-kaper.github.io/ru/about/</guid><description>&lt;p&gt;Это блог канала &lt;code&gt;t-kaper&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Тут будут:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;исходники проектов и заметки по коду&lt;/li&gt;
+&lt;li&gt;железо, роботы и мелкая инженерия&lt;/li&gt;
+&lt;li&gt;описания проектов, черновики и логи сборок&lt;/li&gt;
+&lt;li&gt;немного мыслей, личная техно-мастерская и digital garden&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;По стилю это не стерильный продуктовый блог, а спокойный журнал с консольным и слегка киберпанковым настроением.&lt;/p&gt;</description></item></channel></rss>

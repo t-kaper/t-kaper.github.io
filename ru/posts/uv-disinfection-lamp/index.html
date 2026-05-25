@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ультрафиолетовая лампа для обеззараживания · t-kaper</title>
+<meta name="description" content="Сборка компактной ультрафиолетовой лампы для обеззараживания: лампа E27, ESP32-C3, OLED 0.42 и напечатанный корпус.">
+<meta name="theme-color" content="#0a0f14">
+<meta name="color-scheme" content="dark">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="t-kaper">
+<meta property="og:locale" content="ru_RU">
+
+  
+    <meta property="og:locale:alternate" content="en_US">
+  
+
+  
+
+<meta property="og:title" content="Ультрафиолетовая лампа для обеззараживания · t-kaper">
+<meta property="og:description" content="Сборка компактной ультрафиолетовой лампы для обеззараживания: лампа E27, ESP32-C3, OLED 0.42 и напечатанный корпус.">
+<meta property="og:url" content="http://localhost:1313/ru/posts/uv-disinfection-lamp/">
+<meta property="og:image" content="http://localhost:1313/img/posts/uv_lamp/1779707554.png">
+
+  <meta property="article:published_time" content="2026-05-23T23:21:00&#43;05:00">
+  <meta property="article:modified_time" content="2026-05-23T23:21:00&#43;05:00">
+  <meta property="article:author" content="t-kaper">
+  
+    <meta property="article:tag" content="esp32">
+  
+    <meta property="article:tag" content="uv">
+  
+    <meta property="article:tag" content="disinfection">
+  
+    <meta property="article:tag" content="3d-printing">
+  
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ультрафиолетовая лампа для обеззараживания · t-kaper">
+<meta name="twitter:description" content="Сборка компактной ультрафиолетовой лампы для обеззараживания: лампа E27, ESP32-C3, OLED 0.42 и напечатанный корпус.">
+<meta name="twitter:image" content="http://localhost:1313/img/posts/uv_lamp/1779707554.png">
+
+<link rel="canonical" href="http://localhost:1313/ru/posts/uv-disinfection-lamp/">
+
+  <link rel="alternate" hreflang="en" href="http://localhost:1313/posts/uv-disinfection-lamp/">
+
+  <link rel="alternate" hreflang="ru" href="http://localhost:1313/ru/posts/uv-disinfection-lamp/">
+
+
+  <link rel="alternate" hreflang="x-default" href="http://localhost:1313/">
+
+
+
+  
+  
+    
+  
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"t-kaper"},"dateModified":"2026-05-23T23:21:00+05:00","datePublished":"2026-05-23T23:21:00+05:00","description":"Сборка компактной ультрафиолетовой лампы для обеззараживания: лампа E27, ESP32-C3, OLED 0.42 и напечатанный корпус.","headline":"Ультрафиолетовая лампа для обеззараживания","image":["http://localhost:1313/img/posts/uv_lamp/1779707554.png"],"inLanguage":"ru","keywords":"esp32, uv, disinfection, 3d-printing","mainEntityOfPage":{"@id":"http://localhost:1313/ru/posts/uv-disinfection-lamp/","@type":"WebPage"},"publisher":{"@type":"Person","name":"t-kaper"},"url":"http://localhost:1313/ru/posts/uv-disinfection-lamp/"}</script>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+  
+  
+    
+      <link rel="stylesheet" href="/css/main.css">
+    
+  
+
+
+  </head>
+  <body class="relative bg-bg text-fg font-sans antialiased">
+    <div class="relative min-h-screen flex flex-col">
+      <div class="grid-overlay" aria-hidden="true"></div>
+      <header class="relative z-10 pt-5">
+  <div class="mx-auto w-[min(1080px,calc(100%-2rem))]">
+    <div class="panel flex flex-col gap-4 rounded-2xl px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+      <a class="flex items-center gap-3" href="/ru/">
+        <span class="font-mono text-cyan tracking-[0.18em]  text-sm  text-bold ">[tKaper]</span>
+        <span class="font-mono text-xs text-muted leading-tight max-w-[28ch]">
+          robotics // code // workshop
+        </span>
+      </a>
+
+      <nav class="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-sm" aria-label="Primary">
+        
+          
+          <a
+            href="/ru/posts/"
+            class="transition-colors hover:text-cyan text-cyan"
+          >posts</a>
+        
+          
+          <a
+            href="/ru/tags/"
+            class="transition-colors hover:text-cyan text-[#b6c8da]"
+          >tags</a>
+        
+          
+          <a
+            href="/ru/about/"
+            class="transition-colors hover:text-cyan text-[#b6c8da]"
+          >about</a>
+        
+      </nav>
+
+      <div class="flex flex-wrap items-center gap-2">
+        
+          
+            
+            <a
+              href="/posts/uv-disinfection-lamp/"
+              class="lang-chip "
+              
+            >English</a>
+          
+            
+            <a
+              href="/ru/posts/uv-disinfection-lamp/"
+              class="lang-chip !text-violet !border-violet/40"
+              aria-current="page"
+            >Русский</a>
+          
+        
+      </div>
+    </div>
+  </div>
+</header>
+
+      <main class="relative z-10 flex-1 py-8 sm:py-12">
+        
+  <nav class="mx-auto w-[min(1080px,calc(100%-2rem))] mb-6 font-mono text-xs text-muted" aria-label="Breadcrumbs">
+    <ol class="flex flex-wrap items-center gap-x-2 gap-y-1 list-none p-0 m-0">
+      <li>
+        <a class="ghost-link" href="/ru/">главная</a>
+      </li><li aria-hidden="true" class="opacity-50">/</li>
+        <li><a class="ghost-link" href="/ru/posts/">Посты</a></li><li aria-hidden="true" class="opacity-50">/</li>
+          <li class="text-cyan truncate max-w-[42ch]" aria-current="page">Ультрафиолетовая лампа для обеззараживания</li></ol>
+  </nav>
+
+  <article class="mx-auto w-[min(1080px,calc(100%-2rem))]">
+    <div class="panel rounded-3xl overflow-hidden">
+      
+        <div class="relative aspect-[16/7] border-b border-line/80 bg-bg-deep">
+          <img
+    src="/img/posts/uv_lamp/1779707554.png"
+    alt="Ультрафиолетовая лампа для обеззараживания"
+    loading="lazy"
+    decoding="async"
+    class="h-full w-full object-cover opacity-90"
+      style="object-position: calc(50% &#43; 0%) calc(50% &#43; -0%); scale: 1;"
+  />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f14] via-transparent to-transparent"></div>
+        </div>
+      
+
+      <header class="px-6 sm:px-8 pt-6 sm:pt-8">
+        <h1 class="text-3xl sm:text-5xl font-semibold leading-[1.05] text-balance">Ультрафиолетовая лампа для обеззараживания</h1>
+
+        <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-sm text-muted">
+          <time datetime="2026-05-23">23 May 2026</time>
+          
+            <span class="opacity-60">·</span>
+            <span>2 мин чтения</span>
+          
+          
+            <span class="opacity-60">·</span>
+            <span>351 слово</span>
+          
+        </div>
+
+        
+          <ul class="mt-4 flex flex-wrap gap-2 list-none p-0">
+            
+              <li><a class="tag-chip" href="/ru/tags/esp32/">#Esp32</a></li>
+            
+              <li><a class="tag-chip" href="/ru/tags/uv/">#Uv</a></li>
+            
+              <li><a class="tag-chip" href="/ru/tags/disinfection/">#Disinfection</a></li>
+            
+              <li><a class="tag-chip" href="/ru/tags/3d-printing/">#3d-Printing</a></li>
+            
+          </ul>
+        
+      </header>
+
+      <div class="prose-cyber px-6 sm:px-8 py-8">
+        <p>Когда я был маленьким, в детском саду была привычная процедура: пока мы уходили гулять, воспитатель выносил большую ультрафиолетовую лампу и включал ее примерно на 15 минут. Это делали для обеззараживания комнаты.</p>
+<p>Не могу на 100% сказать, насколько это действительно помогало. Но точно помню другое: в моем детстве мы, кажется, болели заметно меньше, чем сейчас.</p>
+<figure
+  class="shortcode-image"
+    style="width: 350px;"
+>
+  <div
+    class="shortcode-image__frame"
+  >
+    <img
+      src="/img/posts/uv_lamp/734gfbcsdf.png"
+      alt="Ультрафиолетовая лампа для обеззараживания"
+      loading="lazy"
+      decoding="async"
+        style="object-fit: contain; object-position: center; scale: 1;"
+    />
+  </div>
+</figure>
+
+<p>Когда мне понадобилось обеззараживать небольшой контейнер, эти воспоминания всплыли сами собой, и я решил собрать небольшой проект.
+<section class="resource-links">
+    <div class="resource-links__title">Файлы проекта</div>
+  <div class="resource-links__items">
+<a class="resource-link" href="https://example.com/solidworks-file" target="_blank" rel="noopener">
+  <span class="resource-link__icon" aria-hidden="true"><svg viewBox="0 0 24 24" role="img">
+        <path d="M12 2.6 4.5 6.8v8.4l7.5 4.2 7.5-4.2V6.8L12 2.6Zm0 2.3 5.1 2.9L12 10.7 6.9 7.8 12 4.9Zm-5.5 5 4.5 2.5v5.2l-4.5-2.5V9.9Zm6.5 7.7v-5.2l4.5-2.5v5.2L13 17.6Z" />
+      </svg></span>
+  <span class="resource-link__body">
+    <span class="resource-link__label">Модель SolidWorks</span>
+    <span class="resource-link__text">скачать файл</span>
+  </span>
+</a>
+
+<a class="resource-link" href="https://example.com/model-stl" target="_blank" rel="noopener">
+  <span class="resource-link__icon" aria-hidden="true"><svg viewBox="0 0 24 24" role="img">
+        <path d="M12 3 3.5 7.2 12 11.5l8.5-4.3L12 3Zm0 10.3L4.8 9.7 3.5 10.4 12 14.8l8.5-4.4-1.3-.7L12 13.3Zm0 3.3L4.8 13 3.5 13.7 12 18l8.5-4.3-1.3-.7-7.2 3.6Z" />
+      </svg></span>
+  <span class="resource-link__body">
+    <span class="resource-link__label">STL для печати</span>
+    <span class="resource-link__text">скачать STL</span>
+  </span>
+</a>
+
+<a class="resource-link" href="https://github.com/t-kaper/uv-disinfection-lamp" target="_blank" rel="noopener">
+  <span class="resource-link__icon" aria-hidden="true"><svg viewBox="0 0 24 24" role="img">
+        <path d="M12 2.4a9.7 9.7 0 0 0-3.1 18.9c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.5-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.6 1.1 1.6 1.1.9 1.5 2.4 1.1 2.9.8.1-.7.4-1.1.7-1.3-2.2-.2-4.6-1.1-4.6-4.9 0-1.1.4-2 1.1-2.7-.1-.3-.5-1.3.1-2.7 0 0 .9-.3 2.8 1.1a9.6 9.6 0 0 1 5.1 0c2-1.4 2.8-1.1 2.8-1.1.6 1.4.2 2.4.1 2.7.7.7 1.1 1.6 1.1 2.7 0 3.8-2.3 4.7-4.6 4.9.4.3.7.9.7 1.8v2.6c0 .3.2.6.7.5A9.7 9.7 0 0 0 12 2.4Z" />
+      </svg></span>
+  <span class="resource-link__body">
+    <span class="resource-link__label">Код проекта</span>
+    <span class="resource-link__text">GitHub</span>
+  </span>
+</a>
+
+</div>
+</section>
+</p>
+<h2 id="идея-проекта">Идея проекта</h2>
+<p>В основе проекта компактная ультрафиолетовая лампа под цоколь E27. Лампа куплена на AliExpress.</p>
+<p><img src="/img/posts/uv_lamp/1779697310.png" alt="Ультрафиолетовая лампа E27"></p>
+<p>У таких ламп заявленный ресурс работы около 8000 часов. Поэтому я решил сделать не просто включатель, а таймер, который будет считать суммарное время работы лампы. Когда ресурс подойдет к концу, устройство должно напомнить, что лампу пора заменить.</p>
+<p>Время работы и предупреждение выводятся на маленький OLED-экран 0.42&quot;.</p>
+<div
+  class="shortcode-center-row"
+    style="gap: 1rem; align-items: center; justify-content: center;"
+>
+<figure
+  class="shortcode-image"
+    style="width: 35%;"
+>
+  <div
+    class="shortcode-image__frame"
+  >
+    <img
+      src="/img/posts/uv_lamp/1779696819.png"
+      alt="OLED 0.42"
+      loading="lazy"
+      decoding="async"
+        style="object-fit: contain; object-position: center; scale: 1;"
+    />
+  </div>
+</figure>
+
+<figure
+  class="shortcode-image"
+    style="width: 20%;"
+>
+  <div
+    class="shortcode-image__frame"
+  >
+    <img
+      src="/img/posts/uv_lamp/wer24fedv.png"
+      alt="OLED 0.42"
+      loading="lazy"
+      decoding="async"
+        style="object-fit: contain; object-position: center; scale: 1;"
+    />
+  </div>
+</figure>
+
+</div>
+
+<p>Конечно, можно было обойтись обычным светодиодом. Но мне хотелось попробовать такой экран в реальном проекте и немного с ним поработать.</p>
+<h2 id="электроника">Электроника</h2>
+<p>В качестве мозгов я взял ESP32-C3.</p>
+<p><img src="/img/posts/uv_lamp/1779697019.png" alt="ESP32-C3"></p>
+<p>Это самая дешевая плата, которую я нашел на AliExpress и с которой уже немного знаком. Дешевле был CH552, но у него хуже с памятью, а в этом проекте есть важный момент: нужно хранить и обновлять счетчик времени работы лампы.</p>
+<h2 id="корпус-и-файлы">Корпус и файлы</h2>
+<p>Корпус я спроектировал в SolidWorks.</p>
+<p><img src="/img/posts/uv_lamp/photo_2026-05-25_13.29.35.jpeg" alt="Корпус в SolidWorks"></p>
+<p>Код написан на базовой прошивке для ESP.</p>
+<h2></h2>
+<p>В итоге получился компактный таймер для УФ-лампы, который показывает отработанное время и помогает не забыть о ресурсе лампы.
+<img src="/img/posts/uv_lamp/43834fveycd.png" alt="Корпус в SolidWorks"></p>
+<h2 id="результат-и-процесс-сборки">Результат и Процесс сборки</h2>
+<p>можно посмотреть на YouTube:</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/VIDEO_ID_HERE?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<p>Ссылка на видео: <a href="https://www.youtube.com/watch?v=VIDEO_ID_HERE">YouTube</a></p>
+<aside class="warning-block">
+  <div class="warning-block__label">Важно</div>
+  <div class="warning-block__content">
+    <p>Товарищи, это действительно важный момент. Когда работает ультрафиолетовая лампа, она может выделять озон. Он вреден для человека, особенно если находиться рядом с лампой в закрытом помещении.</p>
+<p>Если вы используете такую лампу для обеззараживания комнаты, где потом будет находиться человек, после 15 минут работы обязательно проветрите помещение примерно 30-40 минут, чтобы озон успел улетучиться.</p>
+<p>Также ни в коем случае не смотрите долго на работающую лампу. Ультрафиолет вреден для глаз. Я не стал добавлять реле автоматического выключения, потому что в моем случае это было излишне, но это не отменяет главного правила: смотреть на УФ-лампу нельзя.</p>
+
+  </div>
+</aside>
+
+
+      </div>
+
+      
+
+      <footer class="px-6 sm:px-8 py-5 border-t border-line/80 flex flex-wrap items-center justify-between gap-3 font-mono text-xs text-muted">
+        <a href="/ru/posts/" class="ghost-link inline-flex items-center gap-2">
+          ← вернуться к постам
+        </a>
+        
+          
+        
+      </footer>
+    </div>
+  </article>
+
+      </main>
+      <footer class="relative z-10 pb-8">
+  <div class="mx-auto w-[min(1080px,calc(100%-2rem))]">
+    <div class="panel flex flex-col gap-4 rounded-2xl px-5 py-4 font-mono text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+      <span class="flex items-center gap-2">
+        <span class="inline-block size-2 rounded-full bg-green shadow-[0_0_8px_var(--color-green)]"></span> ping
+      </span>
+
+      <nav class="flex items-center gap-2" aria-label="Social links">
+        <a class="social-icon" href="https://www.youtube.com/@t_kaper" rel="me noopener noreferrer" target="_blank" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z" />
+          </svg>
+        </a>
+        <a class="social-icon" href="https://www.reddit.com/user/c98xdyrcd67/" rel="me noopener noreferrer" target="_blank" aria-label="Reddit">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M24 11.8a2.8 2.8 0 0 0-4.7-2.1 11.9 11.9 0 0 0-6.5-2.1l1.1-5.1 3.6.8a2.3 2.3 0 1 0 .4-1.4L13.6.9a.8.8 0 0 0-.9.6l-1.3 6.1a12 12 0 0 0-6.8 2.1A2.8 2.8 0 1 0 1.5 14a5.6 5.6 0 0 0-.1 1c0 4.1 4.8 7.5 10.6 7.5S22.6 19.1 22.6 15a5.6 5.6 0 0 0-.1-1 2.8 2.8 0 0 0 1.5-2.2ZM6.5 13.7a1.7 1.7 0 1 1 3.4 0 1.7 1.7 0 0 1-3.4 0Zm9.5 4.4c-1 .9-2.4 1.3-4 1.3s-3-.4-4-1.3a.7.7 0 0 1 1-1c.6.6 1.6.9 3 .9s2.4-.3 3-.9a.7.7 0 0 1 1 1Zm.5-2.7a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z" />
+          </svg>
+        </a>
+        <a class="social-icon" href="https://t.me/t_kaper" rel="me noopener noreferrer" target="_blank" aria-label="Telegram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M22.3 2.2c.4-.2.9.1.8.6l-3.4 18.7c-.1.6-.9.9-1.4.5l-5.1-3.8-2.5 2.4c-.4.4-1 .2-1.1-.4l-.5-4.6L1.7 13c-.7-.2-.7-1.2 0-1.5L22.3 2.2Zm-3.8 4.2-11 6.8 2.7.9 6.2-4.6c.3-.2.7.2.4.5l-5.3 5.4.4 3.1 1.4-1.4 4.3 3.1 2.7-14.4-1.8.6Z" />
+          </svg>
+        </a>
+        <a class="social-icon" href="https://x.com/kaper_di7695" rel="me noopener noreferrer" target="_blank" aria-label="X / Twitter">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M18.9 2h3.4l-7.5 8.6L23.6 22h-6.9l-5.4-7-6.2 7H1.7l8-9.1L1.2 2h7l4.9 6.5L18.9 2Zm-1.2 18h1.9L7.2 3.9h-2L17.7 20Z" />
+          </svg>
+        </a>
+      </nav>
+
+      <span>2026 ·  signal log</span>
+    </div>
+  </div>
+</footer>
+
+    </div>
+  </body>
+</html>

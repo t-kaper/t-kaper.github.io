@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="t-kaper">
+  <rect width="512" height="512" rx="96" fill="#0a0f14"/>
+  <path d="M104 122h304v54H283v214h-54V176H104z" fill="#67e8f9"/>
+  <path d="M138 314h54v76h-54zm182-82h54v158h-54z" fill="#a78bfa"/>
+  <path d="M96 88h320v32H96zm0 304h320v32H96z" fill="#1f2937"/>
+</svg>
