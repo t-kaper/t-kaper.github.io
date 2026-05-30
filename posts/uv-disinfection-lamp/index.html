@@ -175,7 +175,7 @@
           
           
             <span class="opacity-60">·</span>
-            <span>427 words</span>
+            <span>619 words</span>
           
         </div>
 
@@ -253,7 +253,23 @@
 
 <h2 id="project-idea">Project Idea</h2>
 <p>The project is built around a compact ultraviolet lamp with an E27 base. I bought the lamp on AliExpress.</p>
+<aside class="warning-block">
+  <div class="warning-block__label">Important</div>
+  <div class="warning-block__content">
+    <p>Ultraviolet radiation is dangerous for humans. It can damage the skin and eyes, increase the risk of skin cancer, and cause serious eye injuries.</p>
+<p>While the lamp is running, you should not stay in the room, you should not look at the lamp, and you need to be very careful when working with this kind of device.</p>
+
+  </div>
+</aside>
+
 <p><img src="/img/posts/uv_lamp/1779697310.png" alt="E27 ultraviolet lamp"></p>
+<p>There are several types of ultraviolet radiation:</p>
+<ul>
+<li><strong>UVC (100–280 nm)</strong> — the harshest type of ultraviolet. It has a strong germicidal effect. It destroys the DNA and RNA of microorganisms and stops them from reproducing. This is the type used in medical disinfection lamps. It is dangerous for humans and can cause burns to the eyes and skin.</li>
+<li><strong>UVB (280–315 nm)</strong> — medium-wave ultraviolet. It is responsible for tanning and vitamin D production in the skin, but too much of it causes sunburn. It is not used for surface disinfection.</li>
+<li><strong>UVA (315–400 nm)</strong> — near, softer ultraviolet. It is used in gel nail curing lamps, currency detectors, and blacklight lamps for clubs and parties. It does not kill bacteria or mold effectively.</li>
+</ul>
+<p>I chose a UVC lamp because I need it for disinfecting containers.</p>
 <p>These lamps usually claim a working life of about 8000 hours. So I decided to build not just a switch, but a timer that tracks the total runtime of the lamp. When the lamp reaches the end of its expected life, the device should warn me that it is time to replace it.</p>
 <p>The runtime and warning message are shown on a small 0.42&quot; OLED display.</p>
 <p><div
