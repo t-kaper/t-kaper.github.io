@@ -277,5 +277,152 @@
 </footer>
 
     </div>
+
+    <button
+  type="button"
+  id="side-rail-toggle"
+  class="side-rail-toggle"
+  aria-expanded="false"
+  aria-controls="side-rail"
+  aria-label="open side console"
+>
+  <span class="side-rail-toggle__dot" aria-hidden="true"></span>
+  <span class="side-rail-toggle__label">console</span>
+</button>
+
+<div id="side-rail-backdrop" class="side-rail-backdrop" aria-hidden="true"></div>
+
+<aside
+  id="side-rail"
+  class="side-rail panel rounded-2xl"
+  aria-hidden="true"
+  aria-label="Side console with featured content"
+>
+  <header class="side-rail__header">
+    <span class="eyebrow">// console</span>
+    <button
+      type="button"
+      id="side-rail-close"
+      class="side-rail__close"
+      aria-label="close"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" fill="none" />
+      </svg>
+    </button>
+  </header>
+
+  <div class="side-rail__body">
+    
+      <section class="side-rail__section">
+        <h3 class="side-rail__title">// pinned</h3>
+        <ul class="side-rail__list">
+          
+            <li>
+              <a class="side-rail-item" href="/posts/uv-disinfection-lamp/">
+                <span class="side-rail-item__title">Ultraviolet Lamp for Disinfection</span>
+                <span class="side-rail-item__meta">
+                  <time datetime="2026-05-23">23.05.2026</time>
+                  
+                    <span class="opacity-60">·</span>
+                    <span>3 min read</span>
+                  
+                </span>
+              </a>
+            </li>
+          
+            <li>
+              <a class="side-rail-item" href="/posts/first-signal/">
+                <span class="side-rail-item__title">First signal</span>
+                <span class="side-rail-item__meta">
+                  <time datetime="2026-05-18">18.05.2026</time>
+                  
+                    <span class="opacity-60">·</span>
+                    <span>1 min read</span>
+                  
+                </span>
+              </a>
+            </li>
+          
+        </ul>
+      </section>
+    
+
+    
+
+    
+
+    <section class="side-rail__section side-rail__section--foot">
+      <a class="side-rail-channel" href="https://t.me/t_kaper" target="_blank" rel="noopener noreferrer">
+        <span class="side-rail-channel__dot" aria-hidden="true"></span>
+        <span class="side-rail-channel__body">
+          <span class="side-rail-channel__label">@t_kaper</span>
+          <span class="side-rail-channel__hint">Telegram channel</span>
+        </span>
+      </a>
+    </section>
+  </div>
+</aside>
+
+
+    <script>
+      (function () {
+        var sidebar = document.getElementById('side-rail');
+        var toggleBtn = document.getElementById('side-rail-toggle');
+        var closeBtn = document.getElementById('side-rail-close');
+        var backdrop = document.getElementById('side-rail-backdrop');
+        if (!sidebar || !toggleBtn) return;
+
+        var STORAGE_KEY = 'tk:side-rail';
+        var TTL_MS = 7 * 24 * 60 * 60 * 1000; 
+        var WIDE_QUERY = window.matchMedia('(min-width: 1440px)');
+
+        function readPref() {
+          try {
+            var raw = localStorage.getItem(STORAGE_KEY);
+            if (!raw) return null;
+            var data = JSON.parse(raw);
+            if (!data || (data.v !== '0' && data.v !== '1')) return null;
+            if (typeof data.t !== 'number' || (Date.now() - data.t) > TTL_MS) {
+              localStorage.removeItem(STORAGE_KEY);
+              return null;
+            }
+            return data.v;
+          } catch (e) { return null; }
+        }
+
+        function writePref(open) {
+          try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify({
+              v: open ? '1' : '0',
+              t: Date.now()
+            }));
+          } catch (e) {}
+        }
+
+        function setOpen(open, persist) {
+          document.body.classList.toggle('side-rail-open', open);
+          sidebar.setAttribute('aria-hidden', open ? 'false' : 'true');
+          toggleBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          if (backdrop) backdrop.setAttribute('aria-hidden', open ? 'false' : 'true');
+          if (persist !== false) writePref(open);
+        }
+
+        var stored = readPref();
+        setOpen(stored === null ? WIDE_QUERY.matches : stored === '1', false);
+
+        toggleBtn.addEventListener('click', function () {
+          setOpen(!document.body.classList.contains('side-rail-open'));
+        });
+        if (closeBtn) closeBtn.addEventListener('click', function () { setOpen(false); });
+        if (backdrop) backdrop.addEventListener('click', function () { setOpen(false); });
+
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && document.body.classList.contains('side-rail-open')) {
+            setOpen(false);
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
